@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborative Canvas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="toolbar">
+      <div class="tool-group">
+        <button id="brushTool" class="tool-btn active">🖌️ Brush</button>
+        <button id="eraserTool" class="tool-btn">🧹 Eraser</button>
+      </div>
+      
+      <div class="tool-group">
+        <button class="color-btn active" data-color="#000000" style="background:#000000"></button>
+        <button class="color-btn" data-color="#ef4444" style="background:#ef4444"></button>
+        <button class="color-btn" data-color="#3b82f6" style="background:#3b82f6"></button>
+        <button class="color-btn" data-color="#10b981" style="background:#10b981"></button>
+        <button class="color-btn" data-color="#f59e0b" style="background:#f59e0b"></button>
+        <button class="color-btn" data-color="#8b5cf6" style="background:#8b5cf6"></button>
+        <button class="color-btn" data-color="#ec4899" style="background:#ec4899"></button>
+      </div>
+      
+      <div class="tool-group">
+        <label>Size: <input type="range" id="strokeWidth" min="1" max="25" value="4">
+        <span id="strokeValue">4px</span></label>
+      </div>
+      
+      <div class="tool-group">
+        <button id="undoBtn" disabled>↶ Undo</button>
+        <button id="redoBtn" disabled>↷ Redo</button>
+        <button id="clearBtn">🗑️ Clear</button>
+      </div>
+      
+      <div class="user-info">
+        👥 <span id="userCount">0</span> online
+      </div>
+    </div>
+    
+    <div class="canvas-container">
+      <canvas id="drawingCanvas"></canvas>
+      <div id="cursors"></div>
+    </div>
+    
+    <div class="status-bar">
+      <span id="statusText">Connecting...</span>
+    </div>
+  </div>
+  
+  <script src="canvas.js"></script>
+  <script src="websocket.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
